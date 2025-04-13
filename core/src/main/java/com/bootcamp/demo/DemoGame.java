@@ -12,11 +12,14 @@ import com.bootcamp.demo.data.save.SaveData;
 import com.bootcamp.demo.events.GameStartedEvent;
 import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.events.core.EventModule;
+import com.bootcamp.demo.util.services.ImageFactory;
 
 public class DemoGame extends Game {
+    private ImageFactory imageFactory;
 
     @Override
     public void create () {
+        imageFactory = new ImageFactory();
         Gdx.input.setInputProcessor(new InputMultiplexer());
 
         final GameData gameData = new GameData();
@@ -82,6 +85,7 @@ public class DemoGame extends Game {
     @Override
     public void dispose () {
         super.dispose();
+        imageFactory.dispose();
         API.Instance().dispose();
         Gdx.app.exit();
     }
