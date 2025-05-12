@@ -1,21 +1,19 @@
 package com.bootcamp.demo.data.game;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.XmlReader;
+import engine.data.game.AGameData;
 import lombok.Getter;
 
-public class GameData {
-
-    private final XmlReader xmlReader = new XmlReader();
+public class GameData extends AGameData {
 
     @Getter
-    private final TacticalsGameData tacticalsGameData;
+    private final ComponentsGameDataExample gameDataExample;
 
     public GameData () {
-        tacticalsGameData = new TacticalsGameData();
+        gameDataExample = new ComponentsGameDataExample();
     }
 
+    @Override
     public void load () {
-        tacticalsGameData.load(xmlReader.parse(Gdx.files.internal("data/tacticals.xml")));
+        gameDataExample.load(readXml("data/game-data-example"));
     }
 }

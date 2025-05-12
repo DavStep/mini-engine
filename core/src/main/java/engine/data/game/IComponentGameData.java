@@ -1,7 +1,7 @@
-package com.bootcamp.demo.data.game;
+package engine.data.game;
 
 import com.badlogic.gdx.utils.XmlReader;
 
-public interface IGameData {
+public interface IComponentGameData {
     void load (XmlReader.Element rootXml);
 }
