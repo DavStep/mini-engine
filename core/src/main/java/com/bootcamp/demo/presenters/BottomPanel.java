@@ -11,11 +11,10 @@ import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.pages.core.PageManager;
 import com.bootcamp.demo.events.core.EventHandler;
 import com.bootcamp.demo.events.core.EventListener;
-import com.bootcamp.demo.pages.MissionsPage;
 import com.bootcamp.demo.pages.TestPage;
-import com.bootcamp.demo.engine.widgets.OffsetButton;
+import engine.widgets.OffsetButton;
 import com.bootcamp.demo.pages.core.APage;
-import com.bootcamp.demo.engine.Resources;
+import engine.Resources;
 import lombok.Setter;
 
 public class BottomPanel extends Table implements EventListener {
@@ -45,7 +44,6 @@ public class BottomPanel extends Table implements EventListener {
     public void onGameStartedEvent (GameStartedEvent event) {
         buttons.get(0).setPageClass(TestPage.class);
         buttons.get(1).setPageClass(null);
-        buttons.get(2).setPageClass(MissionsPage.class);
 
         // by default select button 1
         buttons.get(1).select();

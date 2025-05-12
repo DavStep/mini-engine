@@ -11,7 +11,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.bootcamp.demo.events.core.EventListener;
 import com.bootcamp.demo.events.core.EventModule;
 import com.bootcamp.demo.managers.API;
-import com.bootcamp.demo.pages.MissionsPage;
 import com.bootcamp.demo.pages.TestPage;
 import com.bootcamp.demo.pages.core.APage;
 import com.bootcamp.demo.pages.core.PageManager;
@@ -54,9 +53,6 @@ public class GameUI extends ScreenAdapter implements Disposable, EventListener {
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.T)) {
             API.get(PageManager.class).show(TestPage.class);
-        }
-        if (Gdx.input.isKeyJustPressed(Input.Keys.M)) {
-            API.get(PageManager.class).show(MissionsPage.class);
         }
     }
 

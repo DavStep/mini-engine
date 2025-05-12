@@ -1,7 +1,7 @@
 package com.bootcamp.demo.presenters;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.bootcamp.demo.engine.widgets.CustomScrollPane;
+import engine.widgets.CustomScrollPane;
 
 public class WidgetLibrary {
 

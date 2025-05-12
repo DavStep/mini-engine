@@ -1,4 +1,4 @@
-package com.bootcamp.demo.engine;
+package engine;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.TextureAtlasLoader;

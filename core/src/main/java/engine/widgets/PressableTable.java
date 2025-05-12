@@ -1,4 +1,4 @@
-package com.bootcamp.demo.engine.widgets;
+package engine.widgets;
 
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Action;

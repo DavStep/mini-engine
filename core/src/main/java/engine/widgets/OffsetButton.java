@@ -1,4 +1,4 @@
-package com.bootcamp.demo.engine.widgets;
+package engine.widgets;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
@@ -10,8 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.bootcamp.demo.engine.Resources;
-import com.bootcamp.demo.engine.Squircle;
+import engine.Resources;
+import engine.Squircle;
 import com.bootcamp.demo.notification.INotificationContainer;
 import com.bootcamp.demo.notification.INotificationProvider;
 import com.bootcamp.demo.notification.NotificationWidget;

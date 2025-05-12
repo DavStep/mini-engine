@@ -6,7 +6,7 @@ import com.badlogic.gdx.utils.reflect.ReflectionException;
 import com.bootcamp.demo.dialogs.core.DialogManager;
 import com.bootcamp.demo.localization.Localization;
 import com.bootcamp.demo.events.core.EventModule;
-import com.bootcamp.demo.engine.Resources;
+import engine.Resources;
 import com.bootcamp.demo.pages.core.PageManager;
 
 public class API implements Disposable {

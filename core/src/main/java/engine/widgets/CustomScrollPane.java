@@ -1,4 +1,4 @@
-package com.bootcamp.demo.engine.widgets;
+package engine.widgets;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

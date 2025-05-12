@@ -1,10 +1,10 @@
-package com.bootcamp.demo.engine.widgets;
+package engine.widgets;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.bootcamp.demo.engine.Squircle;
+import engine.Squircle;
 import lombok.Getter;
 
 public class BorderedTable extends PressableTable {

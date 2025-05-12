@@ -11,11 +11,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
-import com.bootcamp.demo.engine.Labels;
-import com.bootcamp.demo.engine.Squircle;
+import engine.Labels;
+import engine.Squircle;
 import com.bootcamp.demo.localization.GameFont;
 import com.bootcamp.demo.managers.API;
-import com.bootcamp.demo.engine.Resources;
+import engine.Resources;
 import lombok.Getter;
 
 public abstract class ADialog extends Table {

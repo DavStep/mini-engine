@@ -7,8 +7,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.*;
 import com.bootcamp.demo.data.game.GameData;
 import com.bootcamp.demo.data.save.SaveData;
-import com.bootcamp.demo.data.save.TacticalSaveData;
-import com.bootcamp.demo.data.save.TacticalsSaveData;
+import com.bootcamp.demo.data.save.CardSaveData;
 import com.bootcamp.demo.events.GameStartedEvent;
 import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.events.core.EventModule;
@@ -24,14 +23,6 @@ public class DemoGame extends Game {
         gameData.load();
 
         loadSaveData();
-
-        final TacticalSaveData tacticalsSaveData = new TacticalSaveData();
-        tacticalsSaveData.setName("present");
-        tacticalsSaveData.setLevel(3);
-
-        API.get(SaveData.class).getTacticalsSaveData().getTacticals().put(0, tacticalsSaveData);
-        savePlayerData();
-
         setScreen(new GameScreen());
         API.get(EventModule.class).fireEvent(GameStartedEvent.class);
     }

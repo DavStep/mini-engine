@@ -1,4 +1,4 @@
-package com.bootcamp.demo.engine.widgets;
+package engine.widgets;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.StringBuilder;
 import com.bootcamp.demo.localization.GameFont;
 import com.bootcamp.demo.localization.Localization;
 import com.bootcamp.demo.managers.API;
-import com.bootcamp.demo.engine.Resources;
+import engine.Resources;
 
 public class I18NLabel extends Label {
 

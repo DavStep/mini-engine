@@ -1,11 +1,12 @@
-package com.bootcamp.demo.data.save;
+package engine.data.save;
 
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonValue;
+import com.bootcamp.demo.data.save.ISaveData;
 import lombok.Getter;
 import lombok.Setter;
 
-public class TacticalSaveData implements Json.Serializable {
+public class CardSaveData implements ISaveData {
 
     @Getter @Setter
     private String name;
