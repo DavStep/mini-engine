@@ -1,0 +1,20 @@
+<table>
+    <table>
+        <defaults size="200" expand="true"/>
+
+        <table radius="70" color="#555555"/>
+        <table/>
+
+        <row/>
+
+        <table/>
+            <table radius="70" color="#555555"/>
+        <table/>
+    </table>
+
+    <row/>
+
+    <table size="200">
+
+    </table>
+</table>

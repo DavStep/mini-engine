@@ -83,6 +83,15 @@ public enum Squircle {
         return Resources.getDrawable("basics/ui-white-squircle-" + radius, color);
     }
 
+    public static Drawable getSquircle (int leftTopRadius, int rightTopRadius, int leftBottomRadius, int rightBottomRadius, Color color) {
+        if (leftTopRadius == rightTopRadius &&
+            leftTopRadius == leftBottomRadius &&
+            leftTopRadius == rightBottomRadius) {
+            return Resources.getDrawable("basics/ui-white-squircle-" + leftTopRadius, color);
+        }
+        return Resources.getDrawable("basics/ui-white-squircle-" + leftTopRadius + "-" + rightTopRadius + "-" + leftBottomRadius + "-" + rightBottomRadius, color);
+    }
+
     public static Drawable getSquircleBtm (int radius, Color color) {
         return Resources.getDrawable("basics/ui-white-squircle-bottom-" + radius, color);
     }

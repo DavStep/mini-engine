@@ -10,12 +10,24 @@ import com.bootcamp.demo.data.save.SaveData;
 import com.bootcamp.demo.events.GameStartedEvent;
 import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.events.core.EventModule;
+import engine.FileWatcherServiceManager;
+import engine.uihotswap.FileWatcherService;
+import lombok.Setter;
 
 public class DemoGame extends Game {
+
+    @Setter
+    private FileWatcherService fileWatcherService;
 
     @Override
     public void create () {
         Gdx.input.setInputProcessor(new InputMultiplexer());
+
+        if (fileWatcherService != null) {
+            final FileWatcherServiceManager fileWatcherServiceManager = new FileWatcherServiceManager();
+            API.Instance().register(FileWatcherServiceManager.class, fileWatcherServiceManager);
+            API.get(FileWatcherServiceManager.class).inject(fileWatcherService);
+        }
 
         final GameData gameData = new GameData();
         API.Instance().register(GameData.class, gameData);
