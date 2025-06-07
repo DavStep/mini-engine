@@ -8,6 +8,7 @@ import com.bootcamp.demo.localization.Localization;
 import com.bootcamp.demo.events.core.EventModule;
 import engine.Resources;
 import com.bootcamp.demo.pages.core.PageManager;
+import engine.uihotswap.sui.SUIManager;
 
 public class API implements Disposable {
 
@@ -33,6 +34,7 @@ public class API implements Disposable {
     public void initMinimal () {
         register(EventModule.class);
         register(Resources.class);
+        register(SUIManager.class);
         register(Localization.class);
         register(PageManager.class);
         register(DialogManager.class);
