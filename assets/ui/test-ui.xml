@@ -1,25 +1,17 @@
 <table>
     <defaults size="200"/>
 
-    <table space="20" pad="20">
+    <cell>
 
-    </table>
+    </cell>
+    <cell space="20" pad="20">
+        <table pad="20" radius="0,35,35,0" color="#ffffff">
+            <cell>
 
-    <table>
+            </cell>
+            <cell>
 
-    </table>
-
-    <row/>
-
-    <table>
-
-    </table>
-
-    <table>
-
-    </table>
-
-    <table>
-
-    </table>
+            </cell>
+        </table>
+    </cell>
 </table>

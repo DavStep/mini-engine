@@ -38,7 +38,7 @@ public class SUIReaderUtils {
     }
 
     public static <T> void addBoolean (ObjectMap<String, SUIAttributeApplier<T, String>> map,
-                                     String name, SUIAttributeApplier<T, Boolean> setter) {
+                                       String name, SUIAttributeApplier<T, Boolean> setter) {
         map.put(name, (target, value) -> {
             try {
                 setter.apply(target, Boolean.parseBoolean(value.trim()));
@@ -70,6 +70,24 @@ public class SUIReaderUtils {
         } catch (NumberFormatException e) {
             Gdx.app.error("SUIUtils", "Invalid floats: " + value, e);
             return new float[0];
+        }
+        return result;
+    }
+
+    public static float parseFloat (final String value) {
+        return Float.parseFloat(value.trim());
+    }
+
+    public static int[] parseInts (final String value) {
+        final String[] parts = parseStrings(value);
+        final int[] result = new int[parts.length];
+        try {
+            for (int i = 0; i < parts.length; i++) {
+                result[i] = Integer.parseInt(parts[i]);
+            }
+        } catch (NumberFormatException e) {
+            Gdx.app.error("SUIUtils", "Invalid floats: " + value, e);
+            return new int[0];
         }
         return result;
     }

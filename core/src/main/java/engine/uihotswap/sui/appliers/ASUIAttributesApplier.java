@@ -12,18 +12,15 @@ public abstract class ASUIAttributesApplier<T> {
         initAttributeApplier(attributeAppliers);
     }
 
-    public void apply (T obj, ObjectMap<String, String> attributes) {
+    public void apply (T target, ObjectMap<String, String> attributes) {
         if (attributes == null) return;
 
         for (ObjectMap.Entry<String, String> attribute : attributes) {
             final String name = attribute.key;
             final String value = attribute.value;
             final SUIAttributeApplier<T, String> attributeApplier = attributeAppliers.get(name);
-            if (attributeApplier == null) {
-                Gdx.app.error("ASUIAttributesApplier", "No attribute applier found for value: " + value);
-                continue;
-            }
-            attributeApplier.apply(obj, value);
+            if (attributeApplier == null) continue;
+            attributeApplier.apply(target, value);
         }
     }
 

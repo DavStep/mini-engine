@@ -1,23 +1,15 @@
 package engine.uihotswap;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.ui.Cell;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.*;
-import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.bootcamp.demo.events.core.EventHandler;
 import com.bootcamp.demo.events.core.EventListener;
 import com.bootcamp.demo.events.core.EventModule;
 import com.bootcamp.demo.managers.API;
 import engine.FileWatcherServiceManager;
-import engine.Resources;
-import engine.Squircle;
 import engine.uihotswap.sui.SUIManager;
-import engine.uihotswap.sui.components.ASUIComponent;
+import engine.uihotswap.sui.components.SUIActor;
 import lombok.Getter;
 
 public class XmlUIReader implements EventListener {
@@ -43,10 +35,10 @@ public class XmlUIReader implements EventListener {
         rootTable.clearChildren();
 
         final XmlReader.Element rootXml = reader.parse(Gdx.files.internal(path));
-        final ASUIComponent<?> element = API.get(SUIManager.class).createElement(rootXml);
+        final SUIActor<?> element = API.get(SUIManager.class).createElement(rootXml);
 
         // now build recursively
-        rootTable.add(element.getActor());
+        rootTable.add(element.getView());
 
         rootTable.debugAll();
     }
