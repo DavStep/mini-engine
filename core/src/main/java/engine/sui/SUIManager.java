@@ -1,18 +1,16 @@
-package engine.uihotswap.sui;
+package engine.sui;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
-import engine.uihotswap.sui.appliers.SUIActorAttributesApplier;
-import engine.uihotswap.sui.appliers.SUICellAttributesApplier;
-import engine.uihotswap.sui.appliers.SUITableAttributesApplier;
-import engine.uihotswap.sui.appliers.SUIWidgetGroupAttributesApplier;
-import engine.uihotswap.sui.components.SUIActor;
-import engine.uihotswap.sui.components.SUITable;
+import engine.sui.appliers.SUIActorAttributesApplier;
+import engine.sui.appliers.SUICellAttributesApplier;
+import engine.sui.appliers.SUITableAttributesApplier;
+import engine.sui.appliers.SUIWidgetGroupAttributesApplier;
+import engine.sui.components.SUIActor;
+import engine.sui.components.SUITable;
 import lombok.Getter;
 
 public class SUIManager {

@@ -5,7 +5,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.bootcamp.demo.events.core.Event;
 import com.bootcamp.demo.events.core.EventModule;
 import com.bootcamp.demo.managers.API;
-import engine.uihotswap.FileWatcherService;
+import engine.sui.FileWatcherService;
 
 
 public class FileWatcherServiceManager implements Disposable {

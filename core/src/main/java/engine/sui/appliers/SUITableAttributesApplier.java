@@ -1,15 +1,14 @@
-package engine.uihotswap.sui.appliers;
+package engine.sui.appliers;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.ObjectMap;
 import engine.Resources;
-import engine.Squircle;
-import engine.uihotswap.sui.SUIAttributeApplier;
-import engine.uihotswap.sui.SUIReaderUtils;
-import engine.uihotswap.sui.SUISquircle;
-import engine.uihotswap.sui.components.SUITable;
+import engine.sui.SUIAttributeApplier;
+import engine.sui.SUIReaderUtils;
+import engine.sui.SUISquircle;
+import engine.sui.components.SUITable;
 
 public final class SUITableAttributesApplier extends ASUIAttributesApplier<SUITable> {
 

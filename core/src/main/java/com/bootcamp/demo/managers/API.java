@@ -8,7 +8,7 @@ import com.bootcamp.demo.localization.Localization;
 import com.bootcamp.demo.events.core.EventModule;
 import engine.Resources;
 import com.bootcamp.demo.pages.core.PageManager;
-import engine.uihotswap.sui.SUIManager;
+import engine.sui.SUIManager;
 
 public class API implements Disposable {
 

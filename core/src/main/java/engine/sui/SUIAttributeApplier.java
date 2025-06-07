@@ -1,4 +1,4 @@
-package engine.uihotswap.sui;
+package engine.sui;
 
 @FunctionalInterface
 public interface SUIAttributeApplier<T, String> {

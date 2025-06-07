@@ -1,9 +1,9 @@
-package engine.uihotswap.sui.appliers;
+package engine.sui.appliers;
 
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup;
 import com.badlogic.gdx.utils.ObjectMap;
-import engine.uihotswap.sui.SUIAttributeApplier;
-import engine.uihotswap.sui.components.SUIWidgetGroup;
+import engine.sui.SUIAttributeApplier;
+import engine.sui.components.SUIWidgetGroup;
 
 public final class SUIWidgetGroupAttributesApplier extends ASUIAttributesApplier<SUIWidgetGroup> {
 

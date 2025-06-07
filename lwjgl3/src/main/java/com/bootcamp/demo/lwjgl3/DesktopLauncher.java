@@ -6,7 +6,7 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.graphics.glutils.HdpiMode;
 import com.bootcamp.demo.DemoGame;
-import engine.uihotswap.FileWatcherService;
+import engine.sui.FileWatcherService;
 
 import java.io.IOException;
 

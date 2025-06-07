@@ -1,13 +1,12 @@
-package engine.uihotswap.sui.appliers;
+package engine.sui.appliers;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Cell;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.ObjectMap;
-import engine.uihotswap.sui.SUIAttributeApplier;
-import engine.uihotswap.sui.SUIReaderUtils;
-import engine.uihotswap.sui.components.SUICell;
+import engine.sui.SUIAttributeApplier;
+import engine.sui.SUIReaderUtils;
+import engine.sui.components.SUICell;
 
 
 public class SUICellAttributesApplier extends ASUIAttributesApplier<SUICell> {

@@ -1,10 +1,10 @@
-package engine.uihotswap.sui.components;
+package engine.sui.components;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
 import com.bootcamp.demo.managers.API;
-import engine.uihotswap.sui.SUIManager;
+import engine.sui.SUIManager;
 import lombok.Getter;
 
 public abstract class SUIActor<T extends Actor> {

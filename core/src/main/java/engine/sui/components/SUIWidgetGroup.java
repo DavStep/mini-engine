@@ -1,9 +1,9 @@
-package engine.uihotswap.sui.components;
+package engine.sui.components;
 
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.bootcamp.demo.managers.API;
-import engine.uihotswap.sui.SUIManager;
+import engine.sui.SUIManager;
 import lombok.Getter;
 
 public class SUIWidgetGroup<T extends WidgetGroup> extends SUIActor<T> {

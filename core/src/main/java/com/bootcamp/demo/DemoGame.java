@@ -11,7 +11,7 @@ import com.bootcamp.demo.events.GameStartedEvent;
 import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.events.core.EventModule;
 import engine.FileWatcherServiceManager;
-import engine.uihotswap.FileWatcherService;
+import engine.sui.FileWatcherService;
 import lombok.Setter;
 
 public class DemoGame extends Game {

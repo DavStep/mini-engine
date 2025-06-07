@@ -1,4 +1,4 @@
-package engine.uihotswap.sui;
+package engine.sui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Align;

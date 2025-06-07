@@ -1,8 +1,7 @@
-package engine.uihotswap.sui.appliers;
+package engine.sui.appliers;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.ObjectMap;
-import engine.uihotswap.sui.SUIAttributeApplier;
+import engine.sui.SUIAttributeApplier;
 
 public abstract class ASUIAttributesApplier<T> {
 

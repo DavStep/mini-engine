@@ -1,6 +1,14 @@
 <table>
     <defaults size="200"/>
 
+    <table fillParent="true" radius="50" color="#dfdfdf">
+        <cell expand="xy" align="topLeft" size="300,300">
+            <table>
+
+            </table>
+        </cell>
+    </table>
+
     <cell>
 
     </cell>

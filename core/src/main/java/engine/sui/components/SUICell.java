@@ -1,4 +1,4 @@
-package engine.uihotswap.sui.components;
+package engine.sui.components;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -7,10 +7,10 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
 import com.bootcamp.demo.managers.API;
-import engine.uihotswap.sui.SUIAttributeApplier;
-import engine.uihotswap.sui.SUIManager;
-import engine.uihotswap.sui.SUIReaderUtils;
-import engine.uihotswap.sui.appliers.ASUIAttributesApplier;
+import engine.sui.SUIAttributeApplier;
+import engine.sui.SUIManager;
+import engine.sui.SUIReaderUtils;
+import engine.sui.appliers.ASUIAttributesApplier;
 import lombok.Getter;
 import lombok.Setter;
 

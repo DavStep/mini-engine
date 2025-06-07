@@ -1,11 +1,11 @@
-package engine.uihotswap.sui.appliers;
+package engine.sui.appliers;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.ObjectMap;
-import engine.uihotswap.sui.SUIAttributeApplier;
-import engine.uihotswap.sui.SUIReaderUtils;
-import engine.uihotswap.sui.components.SUIActor;
+import engine.sui.SUIAttributeApplier;
+import engine.sui.SUIReaderUtils;
+import engine.sui.components.SUIActor;
 
 public final class SUIActorAttributesApplier extends ASUIAttributesApplier<SUIActor> {
 

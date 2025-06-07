@@ -2,7 +2,7 @@ package com.bootcamp.demo.pages;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.bootcamp.demo.pages.core.APage;
-import engine.uihotswap.XmlUIReader;
+import engine.sui.XmlUIReader;
 
 public class TestPage extends APage {
 

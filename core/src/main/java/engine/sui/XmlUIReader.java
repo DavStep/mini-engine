@@ -1,4 +1,4 @@
-package engine.uihotswap;
+package engine.sui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -8,8 +8,7 @@ import com.bootcamp.demo.events.core.EventListener;
 import com.bootcamp.demo.events.core.EventModule;
 import com.bootcamp.demo.managers.API;
 import engine.FileWatcherServiceManager;
-import engine.uihotswap.sui.SUIManager;
-import engine.uihotswap.sui.components.SUIActor;
+import engine.sui.components.SUIActor;
 import lombok.Getter;
 
 public class XmlUIReader implements EventListener {
@@ -38,7 +37,7 @@ public class XmlUIReader implements EventListener {
         final SUIActor<?> element = API.get(SUIManager.class).createElement(rootXml);
 
         // now build recursively
-        rootTable.add(element.getView());
+        rootTable.add(element.getView()).grow();
 
         rootTable.debugAll();
     }

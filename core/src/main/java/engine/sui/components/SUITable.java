@@ -1,4 +1,4 @@
-package engine.uihotswap.sui.components;
+package engine.sui.components;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
 import com.bootcamp.demo.managers.API;
-import engine.uihotswap.sui.SUIManager;
+import engine.sui.SUIManager;
 import lombok.Getter;
 import lombok.Setter;
 
