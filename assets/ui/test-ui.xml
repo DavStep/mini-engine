@@ -1,16 +1,23 @@
 <table>
     <defaults size="200"/>
 
-    <table fillParent="true" radius="50" color="#dfdfdf">
+    <table fillParent="true">
         <cell expand="xy" align="topLeft" size="300,300">
-            <table>
+            <table radius="50" color="#dfdfdf">
 
             </table>
         </cell>
     </table>
 
     <cell>
+        <table pad="20" radius="0,35,35,0" color="#ffffff">
+            <cell>
 
+            </cell>
+            <cell>
+
+            </cell>
+        </table>
     </cell>
     <cell space="20" pad="20">
         <table pad="20" radius="0,35,35,0" color="#ffffff">

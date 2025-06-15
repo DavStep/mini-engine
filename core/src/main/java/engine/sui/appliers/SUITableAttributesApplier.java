@@ -2,6 +2,7 @@ package engine.sui.appliers;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.ObjectMap;
 import engine.Resources;
@@ -51,8 +52,8 @@ public final class SUITableAttributesApplier extends ASUIAttributesApplier<SUITa
 
         attributeAppliers.put("color", (target, value) -> {
             final int[] cornerRadius = target.getCornerRadius();
-            final Color backgroundColor = target.getBackgroundColor();
-            backgroundColor.set(Color.valueOf(value));
+            final Color backgroundColor = Color.valueOf(value);
+            target.setBackgroundColor(backgroundColor);
 
             // update background
             final Table view = target.getView();
@@ -66,6 +67,20 @@ public final class SUITableAttributesApplier extends ASUIAttributesApplier<SUITa
             // update background
             final Table view = target.getView();
             view.setBackground(SUISquircle.get(cornerRadius, backgroundColor));
+        });
+
+        // TODO: 15.06.25 rethink the design
+        attributeAppliers.put("borderColor", (target, value) -> {
+            final int[] cornerRadius = target.getCornerRadius();
+            final Color backgroundColor = target.getBackgroundColor();
+            backgroundColor.set(Color.valueOf(value));
+
+            final Image border = new Image(SUISquircle.getBorder(cornerRadius, backgroundColor));
+            border.setFillParent(true);
+
+            // update background
+            final Table view = target.getView();
+            view.addActor(border);
         });
     }
 }

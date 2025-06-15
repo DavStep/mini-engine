@@ -38,8 +38,7 @@ public class SUITable<T extends Table> extends SUIWidgetGroup<T> {
         });
     }
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private Color backgroundColor = Color.WHITE;
     @Getter
     private final int[] cornerRadius = new int[4];
