@@ -3,8 +3,12 @@ package com.bootcamp.demo.presenters;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Cell;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -14,6 +18,8 @@ import com.bootcamp.demo.managers.API;
 import com.bootcamp.demo.pages.TestPage;
 import com.bootcamp.demo.pages.core.APage;
 import com.bootcamp.demo.pages.core.PageManager;
+import engine.CodeNavigator;
+import engine.CodeUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,6 +45,9 @@ public class GameUI extends ScreenAdapter implements Disposable, EventListener {
         // init stage
         stage = new Stage(viewport);
         stage.addActor(rootUI);
+        new CodeNavigator(stage).exclude(
+            ScrollPane.class
+        );
 
         // construct
         mainPageCell = rootUI.add().grow();
