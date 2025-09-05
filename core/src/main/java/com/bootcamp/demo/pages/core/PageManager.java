@@ -8,7 +8,7 @@ import com.badlogic.gdx.utils.reflect.ReflectionException;
 import com.bootcamp.demo.events.page.PageClosedEvent;
 import com.bootcamp.demo.events.page.PageOpenedEvent;
 import com.bootcamp.demo.managers.API;
-import com.bootcamp.demo.presenters.GameUI;
+import com.bootcamp.demo.presenters.UIScreen;
 
 public class PageManager implements Disposable {
 
@@ -28,7 +28,7 @@ public class PageManager implements Disposable {
     }
 
     public void show (Class<? extends APage> clazz) {
-        final Cell<APage> pageCell = API.get(GameUI.class).getMainPageCell();
+        final Cell<APage> pageCell = API.get(UIScreen.class).getMainPageCell();
         // get the page to show
         final APage page = getPage(clazz);
         // close currently opened page before showing the next page
@@ -41,7 +41,7 @@ public class PageManager implements Disposable {
     }
 
     public void hide () {
-        final Cell<APage> pageCell = API.get(GameUI.class).getMainPageCell();
+        final Cell<APage> pageCell = API.get(UIScreen.class).getMainPageCell();
         final APage currentPage = pageCell.getActor();
         if (currentPage == null) return;
         currentPage.hide(() -> {

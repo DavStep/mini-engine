@@ -1,6 +1,5 @@
 package com.bootcamp.demo;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.files.FileHandle;
@@ -14,7 +13,7 @@ import engine.FileWatcherServiceManager;
 import engine.sui.FileWatcherService;
 import lombok.Setter;
 
-public class DemoGame extends Game {
+public class DemoGame extends com.badlogic.gdx.Game {
 
     @Setter
     private FileWatcherService fileWatcherService;
@@ -34,7 +33,7 @@ public class DemoGame extends Game {
         gameData.load();
 
         loadSaveData();
-        setScreen(new GameScreen());
+        setScreen(new ScreenStack());
         API.get(EventModule.class).fireEvent(GameStartedEvent.class);
     }
 

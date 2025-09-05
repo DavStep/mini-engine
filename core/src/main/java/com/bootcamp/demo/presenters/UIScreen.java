@@ -3,9 +3,6 @@ package com.bootcamp.demo.presenters;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
@@ -19,11 +16,10 @@ import com.bootcamp.demo.pages.TestPage;
 import com.bootcamp.demo.pages.core.APage;
 import com.bootcamp.demo.pages.core.PageManager;
 import engine.CodeNavigator;
-import engine.CodeUtils;
 import lombok.Getter;
 import lombok.Setter;
 
-public class GameUI extends ScreenAdapter implements Disposable, EventListener {
+public class UIScreen extends ScreenAdapter implements Disposable, EventListener {
 
     @Getter
     private final Stage stage;
@@ -35,8 +31,8 @@ public class GameUI extends ScreenAdapter implements Disposable, EventListener {
     @Getter @Setter
     private boolean buttonPressed;
 
-    public GameUI (Viewport viewport) {
-        API.Instance().register(GameUI.class, this);
+    public UIScreen (Viewport viewport) {
+        API.Instance().register(UIScreen.class, this);
         API.get(EventModule.class).registerListener(this);
 
         rootUI = new Table();

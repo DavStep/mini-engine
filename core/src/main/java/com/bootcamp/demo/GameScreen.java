@@ -1,91 +1,39 @@
 package com.bootcamp.demo;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.utils.ScreenUtils;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.bootcamp.demo.presenters.GameUI;
+import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.viewport.Viewport;
+import com.bootcamp.demo.events.core.EventListener;
+import com.bootcamp.demo.events.core.EventModule;
+import com.bootcamp.demo.managers.API;
+import lombok.Getter;
 
-public final class GameScreen implements Screen {
+public class GameScreen extends ScreenAdapter implements Disposable, EventListener {
 
-    private final GameUI ui;
-    private final GameLogic game;
+    @Getter
+    private final Stage stage;
 
-    public GameScreen () {
-        final OrthographicCamera camera = new OrthographicCamera();
-        final float aspect = (float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight();
-        final float decisionAspect = 1440.0f / 2560.0f;
+    public GameScreen (Viewport viewport) {
+        API.Instance().register(GameScreen.class, this);
+        API.get(EventModule.class).registerListener(this);
 
-        final float width, height;
-        if (aspect < decisionAspect) {
-            // aspect ratio lower than mid-aspect, usually better to fix width
-            width = 1440;
-            height = aspect * width;
-        } else {
-            // aspect ratio lower than mid-aspect, usually better to fix height
-            height = 2560;
-            width = height * aspect;
-        }
-        // detect which viewport is better for current aspect
-        final ExtendViewport viewport = new ExtendViewport(width, height, camera);
-
-        // init game and ui
-        ui = new GameUI(viewport);
-        game = new GameLogic(viewport);
+        stage = new Stage(viewport);
     }
 
     @Override
-    public void show () {
-        // if needed, set an input multiplexer to handle both stages
-        final InputMultiplexer inputProcessor = (InputMultiplexer) Gdx.input.getInputProcessor();
-        inputProcessor.addProcessor(game.getStage());
-        inputProcessor.addProcessor(ui.getStage());
+    public void render (float delta) {
+        stage.act(delta);
+        stage.draw();
     }
 
     @Override
-    public void render (final float delta) {
-        // clear screen
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-
-        game.render(delta);
-        ui.render(delta);
-    }
-
-    @Override
-    public void resize (final int width, final int height) {
-        game.resize(width, height);
-        ui.resize(width, height);
-    }
-
-    @Override
-    public void pause () {
-        System.out.println("Game paused.");
-        game.pause();
-        ui.pause();
-    }
-
-    @Override
-    public void resume () {
-        System.out.println("Game resumed.");
-        game.resume();
-        ui.resume();
-    }
-
-    @Override
-    public void hide () {
-        final InputMultiplexer inputProcessor = (InputMultiplexer) Gdx.input.getInputProcessor();
-        inputProcessor.removeProcessor(game.getStage());
-        inputProcessor.removeProcessor(ui.getStage());
-
-        game.hide();
-        ui.hide();
+    public void resize (int width, int height) {
+        stage.getViewport().update(width, height, true);
     }
 
     @Override
     public void dispose () {
-        game.dispose();
-        ui.dispose();
+        stage.dispose();
     }
 }
