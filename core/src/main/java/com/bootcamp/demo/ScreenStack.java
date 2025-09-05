@@ -15,7 +15,7 @@ public final class ScreenStack implements com.badlogic.gdx.Screen {
     public ScreenStack () {
         final OrthographicCamera camera = new OrthographicCamera();
         final float aspect = (float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight();
-        final float decisionAspect = 1440.0f / 2560.0f;
+        final float decisionAspect = 2560.0f / 1440.0f;
 
         final float width, height;
         if (aspect < decisionAspect) {
