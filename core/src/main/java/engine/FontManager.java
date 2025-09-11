@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.bootcamp.demo.localization.GameFont;
+import dungeon.eater.localization.GameFont;
 
 public class FontManager {
 

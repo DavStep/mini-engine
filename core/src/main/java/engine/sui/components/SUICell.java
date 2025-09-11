@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.managers.API;
 import engine.sui.SUIAttributeApplier;
 import engine.sui.SUIManager;
 import engine.sui.SUIReaderUtils;

@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Cell;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.XmlReader;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.managers.API;
 import engine.sui.SUIManager;
 import lombok.Getter;
 import lombok.Setter;

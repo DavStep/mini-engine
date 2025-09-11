@@ -2,7 +2,7 @@ package engine.sui.components;
 
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.managers.API;
 import engine.sui.SUIManager;
 import lombok.Getter;
 

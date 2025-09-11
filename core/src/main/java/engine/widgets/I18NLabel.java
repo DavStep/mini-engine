@@ -4,9 +4,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.StringBuilder;
-import com.bootcamp.demo.localization.GameFont;
-import com.bootcamp.demo.localization.Localization;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.localization.GameFont;
+import dungeon.eater.localization.Localization;
+import dungeon.eater.managers.API;
 import engine.Resources;
 
 public class I18NLabel extends Label {

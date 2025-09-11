@@ -2,9 +2,9 @@ package engine;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Disposable;
-import com.bootcamp.demo.events.core.Event;
-import com.bootcamp.demo.events.core.EventModule;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.events.core.Event;
+import dungeon.eater.events.core.EventModule;
+import dungeon.eater.managers.API;
 import engine.sui.FileWatcherService;
 
 

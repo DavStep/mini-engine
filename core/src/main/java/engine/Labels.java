@@ -2,7 +2,7 @@ package engine;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.bootcamp.demo.localization.GameFont;
+import dungeon.eater.localization.GameFont;
 
 public class Labels {
 

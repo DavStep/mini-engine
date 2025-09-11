@@ -9,8 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Disposable;
-import com.bootcamp.demo.localization.GameFont;
-import com.bootcamp.demo.managers.API;
+import dungeon.eater.localization.GameFont;
+import dungeon.eater.managers.API;
 import lombok.Getter;
 
 public class Resources implements Disposable {
