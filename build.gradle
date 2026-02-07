@@ -33,7 +33,6 @@ project(":core") {
   dependencies {
     // Use 'implementation' unless this needs to be exposed to other modules
     implementation "com.badlogicgames.gdx:gdx-ai:1.8.2"
-    implementation 'com.badlogicgames.gdx:gdx-jnigen-loader:3.0.0-ANTKILLER-SNAPSHOT'
 
     // Lombok for compile-time annotation processing
     compileOnly 'org.projectlombok:lombok:1.18.30' // Updated to the latest version
