@@ -2,11 +2,10 @@
 eclipse.project.name = appName + '-core'
 
 dependencies {
-  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api project(':engine')
   api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-    implementation 'org.projectlombok:lombok:1.18.34'
 
-    if(enableGraalNative == 'true') {
+  if (enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
   }
 }

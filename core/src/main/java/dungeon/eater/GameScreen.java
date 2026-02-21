@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import dungeon.eater.events.core.EventListener;
 import dungeon.eater.events.core.EventModule;
+import dungeon.eater.generator.DungeonGenerator;
 import dungeon.eater.managers.API;
 import dungeon.eater.tools.AxisRenderer;
 import dungeon.eater.tools.DragPanController;
@@ -27,6 +28,8 @@ import lombok.Getter;
  * - G toggles unit grid, A toggles axes
  */
 public class GameScreen extends ScreenAdapter implements Disposable, EventListener {
+
+    private static final int TILE_SIZE = 100;
 
     private final ShapeRenderer shapes;
 
@@ -44,6 +47,7 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
 
     private final AxisRenderer axisRenderer;
     private final GridRenderer gridRenderer;
+    private final DungeonGenerator dungeonGenerator;
 
     public GameScreen () {
         camera = new OrthographicCamera();
@@ -68,7 +72,7 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
         shapes = new ShapeRenderer();
 
         axisRenderer = new AxisRenderer(camera);
-        gridRenderer = new GridRenderer(camera);
+        gridRenderer = new GridRenderer(camera, TILE_SIZE, TILE_SIZE);
         final DragPanController dragPanController = new DragPanController(stage.getViewport(), camera);
 
         stage.addListener(dragPanController);
@@ -80,6 +84,25 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
         table.setBackground(Squircle.getSquircle(30, Color.RED));
         table.setSize(300, 300);
         stage.addActor(table);
+
+        dungeonGenerator = new DungeonGenerator();
+        dungeonGenerator.generate();
+    }
+
+    private void drawRooms () {
+        shapes.begin(ShapeRenderer.ShapeType.Filled);
+        shapes.setColor(Color.BLUE);
+        for (DungeonGenerator.Room room : dungeonGenerator.getRooms()) {
+            shapes.rect(room.x * TILE_SIZE, room.y * TILE_SIZE, room.width * TILE_SIZE, room.height * TILE_SIZE);
+        }
+        shapes.end();
+
+        shapes.begin(ShapeRenderer.ShapeType.Line);
+        shapes.setColor(Color.RED);
+        for (DungeonGenerator.Room room : dungeonGenerator.getCorridors()) {
+            shapes.rect(room.x * TILE_SIZE, room.y * TILE_SIZE, room.width * TILE_SIZE, room.height * TILE_SIZE);
+        }
+        shapes.end();
     }
 
     private void centerCamera () {
@@ -106,6 +129,8 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
             axisRenderer.render(shapes);
         }
 
+        drawRooms();
+
         stage.act(delta);
         stage.draw();
     }
@@ -114,7 +139,7 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
         // toggle visuals
         if (Gdx.input.isKeyJustPressed(Input.Keys.G)) showGrid = !showGrid;
         if (Gdx.input.isKeyJustPressed(Input.Keys.A)) showAxes = !showAxes;
-        if (Gdx.input.isKeyJustPressed(Input.Keys.R)) centerCamera();
+        if (Gdx.input.isKeyJustPressed(Input.Keys.C)) centerCamera();
 
         // zoom
         if (Gdx.input.isKeyJustPressed(Input.Keys.Q)) camera.zoom = MathUtils.clamp(camera.zoom + zoomStep, 0.1f, 10f);
@@ -126,6 +151,10 @@ public class GameScreen extends ScreenAdapter implements Disposable, EventListen
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) camera.position.x += speed;
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) camera.position.y -= speed;
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) camera.position.y += speed;
+
+        // commands
+        if (Gdx.input.isKeyJustPressed(Input.Keys.R)) dungeonGenerator.generate();
+
 
         camera.update();
     }

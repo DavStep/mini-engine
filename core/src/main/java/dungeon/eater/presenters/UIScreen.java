@@ -7,18 +7,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Cell;
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
+import dungeon.eater.dialogs.TestDialog;
+import dungeon.eater.dialogs.core.DialogManager;
 import dungeon.eater.events.core.EventListener;
 import dungeon.eater.events.core.EventModule;
 import dungeon.eater.managers.API;
 import dungeon.eater.pages.TestPage;
 import dungeon.eater.pages.core.APage;
 import dungeon.eater.pages.core.PageManager;
-import engine.CodeNavigator;
 import engine.Squircle;
 import lombok.Getter;
 import lombok.Setter;
@@ -77,7 +76,13 @@ public class UIScreen extends ScreenAdapter implements Disposable, EventListener
         stage.draw();
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.T)) {
-            API.get(PageManager.class).show(TestPage.class);
+            final DialogManager dialogManager = API.get(DialogManager.class);
+            final TestDialog testDialog = dialogManager.getDialog(TestDialog.class);
+            if (testDialog.isShown()) {
+                dialogManager.hide(TestDialog.class);
+            } else {
+                dialogManager.show(TestDialog.class);
+            }
         }
     }
 

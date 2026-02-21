@@ -9,6 +9,7 @@ import dungeon.eater.events.core.EventModule;
 import engine.Resources;
 import dungeon.eater.pages.core.PageManager;
 import engine.sui.SUIManager;
+import engine.services.EngineServices;
 
 public class API implements Disposable {
 
@@ -43,6 +44,7 @@ public class API implements Disposable {
     public <T> void register (Class<T> key, T object) {
         if (apiMap.containsKey(key)) return;
         apiMap.put(key, object);
+        EngineServices.register(key, object);
     }
 
     public <T>  void register (Class<T> clazz) {
@@ -50,6 +52,7 @@ public class API implements Disposable {
         try {
             T instance = ClassReflection.newInstance(clazz);
             apiMap.put(clazz, instance);
+            EngineServices.register(clazz, instance);
         } catch (ReflectionException e) {
             throw new RuntimeException("Failed to instantiate class: " + clazz.getName(), e);
         }
@@ -67,5 +70,6 @@ public class API implements Disposable {
             }
         }
         apiMap.clear();
+        EngineServices.clear();
     }
 }

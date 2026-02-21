@@ -1,0 +1,26 @@
+<table>
+    <defaults grow="x" pad="8"/>
+
+    <cell width="820" padTop="8">
+        <label text="SUI Test Dialog Content" font="BOLD_40" color="#121212" align="center"/>
+    </cell>
+    <row/>
+
+    <cell width="820" padTop="4">
+        <label
+            text="This body is loaded from assets/ui/test-dialog.xml via SUI. Press T to close this dialog."
+            font="BOLD_24"
+            color="#5f5f5f"
+            align="center"
+            wrap="true"/>
+    </cell>
+    <row/>
+
+    <cell width="820" padTop="20" padBottom="8">
+        <table color="#eef5ff" radius="24" pad="18">
+            <cell>
+                <label text="You can also click outside the dialog to hide it." font="BOLD_22" color="#1f3b58" align="center"/>
+            </cell>
+        </table>
+    </cell>
+</table>

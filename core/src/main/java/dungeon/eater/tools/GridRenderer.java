@@ -8,8 +8,8 @@ public class GridRenderer {
     private final Color patternOne = Color.valueOf("#212121");
     private final Color patternTwo = Color.valueOf("#2c2c2c");
 
-    private final int tileWidth = 100;
-    private final int tileHeight = 100;
+    private final int tileWidth;
+    private final int tileHeight;
     private final OrthographicCamera camera;
 
     private int startCol;
@@ -17,8 +17,10 @@ public class GridRenderer {
     private int startRow;
     private int endRow;
 
-    public GridRenderer (OrthographicCamera camera) {
+    public GridRenderer (OrthographicCamera camera, int tileWidth, int tileHeight) {
         this.camera = camera;
+        this.tileWidth = tileWidth;
+        this.tileHeight = tileHeight;
     }
 
     public void render (ShapeRenderer shape) {
