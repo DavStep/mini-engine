@@ -1,9 +1,9 @@
 package dungeon.eater.events.example;
 
-import dungeon.eater.events.core.EventHandler;
-import dungeon.eater.events.core.EventListener;
-import dungeon.eater.events.core.EventModule;
-import dungeon.eater.events.core.EventPriority;
+import engine.events.core.EventHandler;
+import engine.events.core.EventListener;
+import engine.events.core.EventModule;
+import engine.events.core.EventPriority;
 import dungeon.eater.managers.API;
 
 public class EventListenerExample implements EventListener {

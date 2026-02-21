@@ -1,8 +1,8 @@
 package dungeon.eater.events.example;
 
 import dungeon.eater.managers.API;
-import dungeon.eater.events.core.Event;
-import dungeon.eater.events.core.EventModule;
+import engine.events.core.Event;
+import engine.events.core.EventModule;
 
 public class EventExample extends Event {
     public String test;
